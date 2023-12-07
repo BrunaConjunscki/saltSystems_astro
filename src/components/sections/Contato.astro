@@ -5,16 +5,27 @@ import Paragraph from "../shared/Paragraph.astro";
 
 
     <section style="gap:10px; justify-content:center; align-items:center; flex-direction: column; display:flex;" class="">
-        <form action="#" method="post" class="py-1 pl-6 w-80 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
-        border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary">
-            <label for="telefone">Telefone:</label>
+        <Paragraph className="mt-5 text-xl max-sm:w-64 max-sm:text-sm">
+            Digite seu nome:
+        </Paragraph>
+        <form action="#" method="post" class="text-xl py-1 pl-6 w-96 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
+        border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary max-sm:w-64 max-sm:text-sm">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome completo" class="w-full py-3 outline-none bg-transparent">
+        </form>
+        <Paragraph className="mt-5 text-xl max-sm:w-64 max-sm:text-sm">
+            Informe seu WhatsApp:
+        </Paragraph>
+        <form action="#" method="post" class="text-xl py-1 pl-6 w-96 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
+        border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary max-sm:w-64 max-sm:text-sm">
+            <label for="telefone">Número:</label>
             <input type="text" name="telefone" id="telefone" placeholder="(XX) X XXXX-XXXX" class="w-full py-3 outline-none bg-transparent" pattern="\([0-9]{2}\) [0-9] [0-9]{4}-[0-9]{4}" title="(XX) X XXXX-XXXX">
         </form>
-        <Paragraph className="mt-5">
+        <Paragraph className="mt-5 text-xl max-sm:w-64 max-sm:text-sm">
             Selecione o produto de interesse:
         </Paragraph>
-        <form action="#" method="post" class="py-1 pl-6 w-80 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
-    border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary">
+        <form action="#" method="post" class="text-xl py-1 pl-6 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
+    border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary max-sm:w-64 max-sm:text-sm">
     <label for="opcao">Produtos:</label>
             <select id="opcao" name="opcao" class="w-full py-3 outline-none bg-transparent">
                     <option value="SP">ChatBot</option>
@@ -28,7 +39,7 @@ import Paragraph from "../shared/Paragraph.astro";
                     <option value="PB">Analytics</option>
             </select>
     </form>
-    <form>
+    <form class="mt-5 mb-10">
         <Button variant={"primary"} className={"min-w-max text-white"}>
             <span class="hidden sm:flex relative z-[5]">
             Enviar
