@@ -74,7 +74,7 @@ import Paragraph from "../shared/Paragraph.astro";
         event.preventDefault();
         
         const formNome = document.getElementById('nome').value;
-        const formTel = document.getElementById('telefone').value;
+        const formTel = document.getElementById('telefone').value.replace(/\D/g, '');
         const formProd = document.getElementById('opcao').value;
 
         const formData = {
@@ -88,20 +88,16 @@ import Paragraph from "../shared/Paragraph.astro";
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
-                    // Adicione outros cabeçalhos conforme necessário
                 },
                 body: JSON.stringify(formData)
             });
 
             if (response.ok) {
-                // Se a resposta estiver ok, você pode fazer algo aqui
                 alert('Dados enviados com sucesso!');
             } else {
-                // Se a resposta não estiver ok, você pode tratar o erro aqui
                 alert('Erro ao enviar dados. Tente novamente.');
             }
         } catch (error) {
-            // Se ocorrer um erro durante a solicitação, você pode tratar o erro aqui
             console.error('Erro durante a solicitação:', error);
         }
     });
