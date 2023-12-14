@@ -13,7 +13,7 @@ import Paragraph from "../shared/Paragraph.astro";
         <div class="text-xl py-1 pl-6 w-96 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
         border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary max-sm:w-64 max-sm:text-sm">
             <label for="nome">Nome:</label>
-            <input required type="text" name="nome" id="nome" placeholder="Nome completo" maxlength="50" class="w-full py-3 outline-none bg-transparent">
+            <input required type="text" name="nome" id="nome" placeholder="Nome completo" maxlength="50" minlength="4" class="w-full py-3 outline-none bg-transparent">
         </div>
         <Paragraph className="flex justify-center mt-5 text-xl max-sm:w-64 max-sm:text-sm">
             Informe seu WhatsApp:
@@ -21,7 +21,7 @@ import Paragraph from "../shared/Paragraph.astro";
         <div class="text-xl py-1 pl-6 w-96 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
         border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary max-sm:w-64 max-sm:text-sm">
             <label for="telefone">Número:</label>
-            <input type="text" name="telefone" id="telefone" placeholder="(XX) X XXXX-XXXX" class="w-full py-3 outline-none bg-transparent" title="(XX) X XXXX-XXXX" required/>
+            <input type="text" name="telefone" id="telefone" pattern=".{16,}" placeholder="(XX) X XXXX-XXXX" class="w-full py-3 outline-none bg-transparent" title="(XX) X XXXX-XXXX" required/>
         </div>
         <Paragraph className="flex justify-center mt-5 text-xl max-sm:w-64 max-sm:text-sm">
             Selecione o produto de interesse:
