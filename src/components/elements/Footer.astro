@@ -157,9 +157,13 @@ const footerLegal = [
         <Container>
             <div style="display:flex; justify-content:center;" class="flex justify-between items-center gap-6 md:text-lg text-heading-3">
                 <div>
-                    &copy; <span id="year"></span> Salt Systems. Todos os direitos reservados
+                    &copy; Salt Systems. Todos os direitos reservados <span id="year"></span>
                 </div>
             </div>
         </Container>
     </div>
 </footer>
+
+<script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+</script>
