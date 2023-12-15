@@ -13,7 +13,7 @@ import Paragraph from "../shared/Paragraph.astro";
         <div class="text-xl py-1 pl-6 w-96 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
         border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary max-sm:w-64 max-sm:text-sm">
             <label for="nome">Nome:</label>
-            <input required type="text" name="nome" id="nome" placeholder="Nome completo" maxlength="50" minlength="4" class="w-full py-3 outline-none bg-transparent">
+            <input required type="text" name="nome" id="nome" placeholder="Nome completo" maxlength="50" minlength="3" class="w-full py-3 outline-none bg-transparent">
         </div>
         <Paragraph className="flex justify-center mt-5 text-xl max-sm:w-64 max-sm:text-sm">
             Informe seu WhatsApp:
@@ -24,22 +24,20 @@ import Paragraph from "../shared/Paragraph.astro";
             <input type="text" name="telefone" id="telefone" pattern=".{16,}" placeholder="(XX) X XXXX-XXXX" class="w-full py-3 outline-none bg-transparent" title="(XX) X XXXX-XXXX" required/>
         </div>
         <Paragraph className="flex justify-center mt-5 text-xl max-sm:w-64 max-sm:text-sm">
-            Selecione o produto de interesse:
+            Selecione o assunto de interesse:
         </Paragraph>
         <div class="text-xl py-1 pl-6 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
     border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary max-sm:w-64 max-sm:text-sm">
-    <label for="opcao">Produtos:</label>
+    <label for="opcao">Assunto:</label>
             <select id="opcao" name="opcao" class="w-full py-3 outline-none bg-transparent" required>
-                    <option value="" disabled selected>Selecione um produto</option>
-                    <option value="ChatBot">ChatBot</option>
-                    <option value="CRM Analytics">CRM Analytics</option>
-                    <option value="Integrador">Integrador</option>
-                    <option value="Portal de cobranças">Portal de cobranças</option>
-                    <option value="Orquestrador">Orquestrador</option>
-                    <option value="Remarketing">Remarketing</option>
-                    <option value="Funil de recuperação">Funil de recuperação</option>
-                    <option value="Dashboard de recuperação">Dashboard de recuperação</option>
-                    <option value="Analytics">Analytics</option>
+                    <option value="" disabled selected>Selecione um assunto</option>
+                    <option value="Integração">Integração</option>
+                    <option value="Consultoria">Consultoria</option>
+                    <option value="Orquestração">Orquestração</option>
+                    <option value="Portal">Portal</option>
+                    <option value="Bot">Bot</option>
+                    <option value="Treinamento">Treinamento</option>
+                    <option value="Suporte">Suporte</option>
             </select>
         </div>
     <div class="flex justify-center mt-5 mb-10">
