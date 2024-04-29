@@ -1,0 +1,100 @@
+---
+import Container from "../shared/Container.astro";
+import Button from "../shared/Button.astro";
+import 'tailwindcss/tailwind.css'; // Importa o Tailwind CSS
+
+
+
+let comments = [
+  { dt_carga: '01/01/2024', dt_inicio: '01/01/2024', dt_fim: '01/02/2024', carregados: '1000', acionados: '1000', respondidos: '900', nao_resp: '100', status: 'Finalizado' },
+  { dt_carga: '05/04/2024', dt_inicio: '05/04/2024', dt_fim: '05/05/2024', carregados: '2500', acionados: '2000', respondidos: '2000', nao_resp: '0', status: 'Acionando' },
+];
+
+
+---
+
+
+
+
+
+<section class="relative pt-32 lg:pt-36" style="text-decoration-color: red">
+  <Container className={"flex flex-col lg:flex-row gap-10 lg:gap-12"}> 
+  <div class="row" style="color: white; height: 750px" >
+      <div style="height: 70px; width: 1200px; border: 1px solid #595959; border-radius: 7px; padding: 8px; margin: 20px -10px">
+        <div>
+          <span>Cliente: Nome</span>
+          <br>
+          <span>Cliente: Documento</span>
+          <span style="display: flex; justify-content: end; margin-top: -50px;">HORA DIA</span>
+        </div>
+      </div>
+     
+
+    
+      <div style="height: 500px; width: 150px; border: 1px solid #595959; border-radius: 7px;padding: 8px; margin: 20px -10px">
+        <span>NOME</span>
+        <br>
+        <span>CPF</span>
+        <br>
+        <span>TELEFONE</span>
+        <div style="margin-top: 350px; margin-left: 15px">
+          <a href="/">
+            <Button variant={"primary"}>
+              <span class="text-white relative z-[5]">Voltar</span>
+            </Button> 
+          </a>
+        </div>
+      </div>
+      <div style="height: 500px; width: 1050px; margin-top: -520px; margin-left:141px; border: 1px solid #595959; border-radius: 7px; padding: 8px">
+        <div style="margin-left: 20px; display: flex; gap: 90px">
+          <Button variant={"primary"}>
+            <span class="text-white relative z-[5]">Todas</span>
+            </a>
+          </Button>
+          <Button variant={"primary"}>
+            <span class="text-white relative z-[5]">Encerradas</span>
+            </a>
+          </Button>
+          <Button variant={"primary"}>
+            <span class="text-white relative z-[5]">Ativas</span>
+            </a>
+          </Button>
+          <a href="importar">
+            <Button variant={"primary"}>
+              <span class="text-white relative z-[5]">Subir Campanha</span>
+            </Button>
+          </a>
+        </div>
+        <table style="margin-top: 30px">
+          <thead>
+            <tr style="width: 1200px">
+              <th style="width: 133px"> DT Carga </th>
+              <th style="width: 133px"> DT Inicio </th>
+              <th style="width: 133px"> DT Fim </th>
+              <th style="width: 133px"> Carregados </th>
+              <th style="width: 133px"> Acionados </th>
+              <th style="width: 133px"> Respondidos </th>
+              <th style="width: 133px"> Não Resp </th>
+              <th style="width: 133px"> Status </th>
+            </tr>
+          </thead>
+          <tbody>
+            { comments.map(item => (
+              <tr>
+                <th> {item.dt_carga }</th>
+                <th> {item.dt_inicio }</th>
+                <th> {item.dt_fim }</th>
+                <th> {item.carregados }</th>
+                <th> {item.acionados }</th>
+                <th> {item.respondidos }</th>
+                <th> {item.nao_resp }</th>
+                <th> {item.status }</th>
+              </tr>
+            ) ) }
+          </tbody>
+        </table>
+      </div>
+  </div> 
+  </Container>
+</section> 
+

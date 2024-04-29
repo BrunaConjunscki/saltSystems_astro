@@ -1,0 +1,29 @@
+---
+
+
+  export function handleFileUpload(file) {
+    // Aqui você pode implementar a lógica para lidar com o upload do arquivo
+    console.log('Arquivo selecionado:', file.name);
+    // Exemplo: enviar o arquivo para um servidor usando fetch
+    const formData = new FormData();
+    formData.append('file', file);
+
+    fetch('https://seuservidor.com/upload', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Arquivo enviado com sucesso!');
+        // Faça algo após o upload bem-sucedido
+      } else {
+        console.error('Erro ao enviar arquivo.');
+        // Tratar erros de upload
+      }
+    })
+    .catch(error => {
+      console.error('Erro de rede:', error);
+    });
+  }
+
+---

@@ -1,0 +1,116 @@
+---
+import Container from "../shared/Container.astro";
+import Button from "../shared/Button.astro";
+import "tailwindcss/tailwind.css"; // Importa o Tailwind CSS
+import { handleFileUpload } from '../../functions/uploadHandler.astro'; // Importar função para lidar com o upload
+
+const dadosDaTabela = async () => {
+  const dados = [
+    { coluna1: "Valor1", coluna2: "Valor2" },
+    { coluna1: "Valor3", coluna2: "Valor4" },
+    // Adicione mais objetos conforme necessário
+  ];
+
+  return dados;
+};
+---
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  // Initialize flatpickr when the component is mounted
+  export function onMount() {
+    flatpickr(".date-picker", {
+      // Options for flatpickr
+      dateFormat: "Y-m-d", // Set your desired date format
+    });
+  }
+</script>
+
+<script>
+  function handleFileChange(event) {
+    const file = event.target.files[0]; // Obtém o arquivo selecionado pelo usuário
+    handleFileUpload(file); // Chama a função para lidar com o upload do arquivo
+  }
+</script>
+
+<section class="relative pt-32 lg:pt-36" style="text-decoration-color: red">
+  <Container className={"flex flex-col lg:flex-row gap-10 lg:gap-12"}>
+    <div class="row" style="color: white; height: 750px">
+      <div
+        style="height: 70px; width: 1200px; border: 1px solid #595959; border-radius: 7px; padding: 8px; margin: 20px -10px"
+      >
+        <div>
+          <span>Cliente: Nome</span>
+          <br />
+          <span>Cliente: Documento</span>
+          <span style="display: flex; justify-content: end; margin-top: -50px;"
+            >HORA DIA</span
+          >
+        </div>
+      </div>
+
+      <div
+        style="height: 500px; width: 150px; border: 1px solid #595959; border-radius: 7px;padding: 8px; margin: 20px -10px"
+      >
+        <span>NOME</span>
+        <br />
+        <span>CPF</span>
+        <br />
+        <span>TELEFONE</span>
+        <div style="margin-top: 350px; margin-left: 15px">
+          <a href="nps">
+            <Button variant={"primary"}>
+              <span class="text-white relative z-[5]">Voltar</span>
+            </Button>
+          </a>
+        </div>
+      </div>
+      <div
+        style="height: 500px; width: 1050px; margin-top: -520px; margin-left:141px; border: 1px solid #595959; border-radius: 7px; padding: 8px"
+      >
+        <div style="width: 1200px; height: 300px">
+          <Button variant={"primary"}>
+            <span class="text-white relative z-[5]">Importar Arquivo</span>
+          </Button>
+
+<!--           <input
+          type="file"
+          id="file-input"
+          style="display: none;" // Esconde o input de arquivo nativo
+          onchange={handleFileChange} // Chama a função quando um arquivo é selecionado
+        /> -->
+
+
+<!--           <button onclick={() => document.getElementById('file-input').click()}>
+            Importar Arquivo
+          </button>
+        </div> -->
+
+        <div style="width: 1200px; height: 200px">
+          <b>
+            <span>Informe a data inicial da campanha</span>
+            <p>
+              <input
+                type="date"
+                class="date-picker"
+                placeholder="Select a date"
+                style="margin-left: 20px; color: rgb(40, 40, 40) "
+              />
+              <p>
+                <span> Informe a data final da campanha</span>
+                <p>
+                  <input
+                    type="date"
+                    class="date-picker"
+                    placeholder="Select a date"
+                    style="margin-left: 20px; color: rgb(40, 40, 40) "
+                  />
+                </p>
+              </p>
+            </p>
+          </b>
+        </div>
+      </div>
+    </div></Container>
+</section>
